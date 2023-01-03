@@ -23,6 +23,10 @@ export const extensions = {
   ev3: "ev3",
   boost: "boost",
   gdxfor: "gdxfor",
+	led: "led",
+	button: "button",
+	poti: "poti",
+	rgb: "rgb"
 }
 
 // Alias extensions: unlike movedExtensions, this is handled for both scratch2 and scratch3.

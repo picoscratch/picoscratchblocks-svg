@@ -12,6 +12,7 @@ import {
 } from "../syntax/index.js"
 
 import SVG from "./draw.js"
+import extcolors from "./extcolors.js"
 import style from "./style.js"
 const { defaultFont, commentFont, makeStyle, makeIcons } = style
 
@@ -113,6 +114,10 @@ export class IconView {
       makeymakeyBlock: { width: 40, height: 40 },
       gdxforBlock: { width: 40, height: 40 },
       boostBlock: { width: 40, height: 40 },
+			ledBlock: { width: 40, height: 40, dx: 10 },
+			buttonBlock: { width: 40, height: 40, dx: 8, dy: -1 },
+			potiBlock: { width: 40, height: 40, dx: 8 },
+			rgbBlock: { width: 40, height: 40, dx: 8 }
     }
   }
 }
@@ -277,7 +282,12 @@ class BlockView {
       this.children.unshift(
         new IconView({ name: this.info.category + "Block" }),
       )
-      this.info.category = "extension"
+      // this.info.category = "extension"
+			if(extcolors[this.info.category]) {
+				this.info.category = extcolors[this.info.category]
+			} else {
+				this.info.category = "extension"
+			}
     }
 
     this.x = 0

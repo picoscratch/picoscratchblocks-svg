@@ -1689,4 +1689,12 @@ export default [
     shape: "stack",
     category: "boost",
   },
+  {
+    id: "led.ledon",
+    selector: "ledOn",
+    spec: "led on",
+    inputs: ["%n"],
+    shape: "stack",
+    category: "led",
+  },
 ]

@@ -66,6 +66,7 @@ body {
 </div>
 
 <textarea id="editor"></textarea>
+<textarea id="sb3-svgcode" readonly style="position: fixed; bottom: 0;" rows="10" cols="50"></textarea>
 </div>
 
 <pre id="preview" class="blocks"></pre>
@@ -231,6 +232,7 @@ function objUpdated() {
     if (exportSVGLink) document.body.removeChild(exportSVGLink);
     var link = exportSVGLink = document.createElement('a');
     link.href = docView3.exportSVG();
+		document.querySelector("#sb3-svgcode").value = docView3.exportSVGString();
     link.setAttribute('download', 'scratchblocks.svg');
     link.textContent = "Export SVG";
     link.className = 'export-link';
